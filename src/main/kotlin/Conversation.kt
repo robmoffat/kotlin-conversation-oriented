@@ -1,8 +1,12 @@
-package com.github.deutschebank.cop
+package com.github.deutschebank.symphony.cop
+
+import com.github.deutschebank.symphony.cop.filter.Filter
 
 interface Conversation : Addressable {
 
-    val name()
+    val name : String
+
+    val members : MutableSet<Participant>
 
     /**
      * Sends the message $m to the conversation

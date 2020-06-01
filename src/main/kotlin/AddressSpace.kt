@@ -1,10 +1,13 @@
-package com.github.deutschebank.cop
+package com.github.deutschebank.symphony.cop
 
 /**
- * An address space is a set of conversations,
+ * An address space is a set of conversations, which at least all have unique names within the space.
  */
 interface AddressSpace {
 
-    fun conversation(name: String, members: List<Participant>, properties: Map<String, String>) : Conversation
-
+    /**
+     * Creates, or returns an existing, conversation containing $members.
+     * If the conversation already exists, new members may be added.
+     */
+    fun getConversation(name: String, members: Set<Participant> = emptySet(), properties: Map<String, String> = emptyMap()) : Conversation
 }

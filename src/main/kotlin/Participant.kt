@@ -1,7 +1,7 @@
-package com.github.deutschebank.cop
+package com.github.deutschebank.symphony.cop
 
 interface Participant : Addressable {
 
-    val name()
+    val name : String
 
 }

@@ -1,6 +1,15 @@
-package com.github.deutschebank.cop
+package com.github.deutschebank.symphony.cop
 
 interface Message {
 
-    val tags: List<Tag>
+    /**
+     * Conversation that the message belongs to.
+     */
+    val conversation: Conversation
+
+    /**
+     * Returns all the parts of the message matching the class parameter.
+     */
+    fun <T> only(matching: Class<T>) : List<T>
+
 }
